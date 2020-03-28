@@ -1,18 +1,12 @@
-//import { createPopper } from 'node_modules/@popperjs/core';
-
+import { createPopper } from '@popperjs/core/lib/popper-lite.js';
 var button = $('#BtnTest');
 var div = $('#DivTest');
 
-div.hide();
+//div.hide();
 
-button.click(function() {
-
-    var popper = new Popper(button, div, {
-        placement: 'top'
-    });
-
-
-})
+createPopper(button, div, {
+    modifiers: [preventOverflow, flip]
+});
 
 
 
